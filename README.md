@@ -6,14 +6,15 @@ from matplotlib.patches import FancyArrowPatch
 # === Definición del DFA ===
 states = {"Ingresar tarjeta","Contraseña","Validar contraseña","Visualizar saldo","Retirar","Depositar","Retitar Tarjeta","Tipo de moneda","Ingresar Monto","Retirar Moneda","Generar boleta","Modificar Saldo","Monto a retirar"}
 alphabet = {"a","b"}
-delta = {("q0","a"):"q1", 
-        ("q1","a"):"q4", 
-        ("q1","b"):"q4", 
-        ("q2","a"):"q0", 
-        ("q2","b"):"q1", 
-        ("q3","b"):"q2", 
-        ("q4","a"):"q1", 
-        ("q4","b"):"q3"}
+delta = {("Ingresar tarjeta","a"):"Contraseña", 
+        ("Contraseña","a"):"Validar contraseña", 
+        ("Contraseña","b"):"Visualizar saldo", 
+        ("Visualizar saldo","a"):"Retitar Tarjeta", 
+        ("Depositar","b"):"Tipo de moneda", 
+        ("Retirar","b"):"Monto a retirar", 
+        ("Retirar Moneda","a"):"Modificar Saldo", 
+        ("Tipo de moneda","b"):"Ingresar Monto"}
+        ("Depositar","a"):"Visualizar saldo",
 
 q0, F = "q0", {"q4"}
 
