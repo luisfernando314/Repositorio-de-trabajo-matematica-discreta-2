@@ -15,6 +15,8 @@ delta = {("Ingresar tarjeta","a"):"Contraseña",
         ("Retirar Moneda","a"):"Modificar Saldo", 
         ("Tipo de moneda","b"):"Ingresar Monto"}
         ("Depositar","a"):"Visualizar saldo",
+        ("Validar contraseña","a"):"Contraseña",
+        ("Modificar Saldo","a"):"Generar boleta",
 
 q0, F = "q0", {"q4"}
 
