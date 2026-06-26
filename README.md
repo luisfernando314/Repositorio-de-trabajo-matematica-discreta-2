@@ -1,28 +1,31 @@
 # Repositorio-de-trabajo-matematica-discreta-2
 # dfa_cli_compacto.py — versión reducida
-import sys, matplotlib.pyplot as plt, networkx as nx
-from matplotlib.patches import FancyArrowPatch
+import sys, matplotlib.pyplot as plt, networkx as nx # type: ignore
+from matplotlib.patches import FancyArrowPatch # type: ignore
 
 # === Definición del DFA ===
 states = {"Ingresar tarjeta","Contraseña","Validar contraseña","Visualizar saldo","Retirar","Depositar","Retitar Tarjeta","Tipo de moneda","Ingresar Monto","Retirar Moneda","Generar boleta","Modificar Saldo","Monto a retirar"}
 alphabet = {"a","b"}
-delta = {("Ingresar tarjeta","a"):"Contraseña", 
-        ("Contraseña","a"):"Validar contraseña", 
-        ("Contraseña","b"):"Visualizar saldo", 
-        ("Visualizar saldo","a"):"Retitar Tarjeta", 
-        ("Depositar","b"):"Tipo de moneda", 
-        ("Retirar","b"):"Monto a retirar", 
-        ("Tipo de moneda","b"):"Ingresar Monto",
-        ("Depositar","a"):"Visualizar saldo",
-        ("Validar contraseña","a"):"Contraseña",
-        ("Modificar Saldo","a"):"Generar boleta",
-        ("Modificar Saldo","a"):"Generar boleta",
+delta = {
+    ("Ingresar tarjeta","a"):"Contraseña",
+    ("Contraseña","b"):"Visualizar saldo",
+    ("Visualizar saldo","a"):"Retitar Tarjeta",
+    ("Depositar","b"):"Tipo de moneda",
+    ("Retirar","b"):"Monto a retirar",
+    ("Retirar Moneda","a"):"Modificar Saldo",
+    ("Tipo de moneda","b"):"Ingresar Monto",
+    ("Depositar","a"):"Visualizar saldo",
+    ("Validar contraseña","b"):"Contraseña",
+    ("Modificar Saldo","a"):"Generar boleta",
+    ("Validar contraseña","a"):"Visualizar saldo",
+    ("Contraseña","a"):"Validar contraseña"
 }
-Ingresar tarjeta, F = "Ingresar tarjeta", {"Generar boleta"}
+
+estado_inicial, F = "Ingresar tarjeta", {"Generar boleta","Retitar Tarjeta"}
 
 # === Simulación ===
 def run(s):
-    q, steps = Ingresar tarjeta, [Ingresar tarjeta]
+    q, steps = estado_inicial, [estado_inicial]
     for i,ch in enumerate(s):
         if (q,ch) not in delta: raise ValueError(f"Sin transición desde {q} con '{ch}' en pos {i}")
         q = delta[(q,ch)]; steps.append(q)
