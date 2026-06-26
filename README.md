@@ -18,11 +18,11 @@ delta = {("Ingresar tarjeta","a"):"Contraseña",
         ("Validar contraseña","a"):"Contraseña",
         ("Modificar Saldo","a"):"Generar boleta",
 
-q0, F = "q0", {"q4"}
+Ingresar tarjeta, F = "Ingresar tarjeta", {"Generar boleta"}
 
 # === Simulación ===
 def run(s):
-    q, steps = q0, [q0]
+    q, steps = Ingresar tarjeta, [Ingresar tarjeta]
     for i,ch in enumerate(s):
         if (q,ch) not in delta: raise ValueError(f"Sin transición desde {q} con '{ch}' en pos {i}")
         q = delta[(q,ch)]; steps.append(q)
