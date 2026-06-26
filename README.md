@@ -12,12 +12,12 @@ delta = {("Ingresar tarjeta","a"):"Contraseña",
         ("Visualizar saldo","a"):"Retitar Tarjeta", 
         ("Depositar","b"):"Tipo de moneda", 
         ("Retirar","b"):"Monto a retirar", 
-        ("Retirar Moneda","a"):"Modificar Saldo", 
-        ("Tipo de moneda","b"):"Ingresar Monto"}
+        ("Tipo de moneda","b"):"Ingresar Monto",
         ("Depositar","a"):"Visualizar saldo",
         ("Validar contraseña","a"):"Contraseña",
         ("Modificar Saldo","a"):"Generar boleta",
-
+        ("Modificar Saldo","a"):"Generar boleta",
+}
 Ingresar tarjeta, F = "Ingresar tarjeta", {"Generar boleta"}
 
 # === Simulación ===
