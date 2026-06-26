@@ -4,8 +4,7 @@ import sys, matplotlib.pyplot as plt, networkx as nx
 from matplotlib.patches import FancyArrowPatch
 
 # === Definición del DFA ===
-states = {"Ingresar tarjeta","Contraseña","Validar contraseña","Visualizar saldo","Retirar","Depositar","Retitar Tarjeta","Tipo de moneda","Ingresar Mnoto"
-}
+states = {"Ingresar tarjeta","Contraseña","Validar contraseña","Visualizar saldo","Retirar","Depositar","Retitar Tarjeta","Tipo de moneda","Ingresar Monto","Retirar Moneda","Generar boleta","Modificar Saldo","Monto a retirar"}
 alphabet = {"a","b"}
 delta = {("q0","a"):"q1", 
         ("q1","a"):"q4", 
